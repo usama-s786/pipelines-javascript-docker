@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: usamaspipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: usamaspipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: usamaspipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: usamaspipelinesjavascriptdocker 
+          image: mycontainerregistryusama.azurecr.io/usamaspipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
